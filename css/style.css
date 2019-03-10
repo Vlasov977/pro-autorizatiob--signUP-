@@ -1,0 +1,403 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: red;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+#page {
+    padding-top: 4rem;
+}
+
+.header {
+    background: #2D476B;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    font-size: .9em;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    z-index: 3;
+}
+
+.popup-header .link {
+    font-size: 1.5rem;
+}
+
+.menu {
+    position: relative;
+}
+
+.navigation {
+    display: flex;
+    margin: 0;
+    padding: 0 .19rem;
+}
+
+.navigation-item {
+    display: flex;
+    font-weight: 700;
+}
+
+.navigation-item .link {
+    padding: 1.5rem 1rem;
+}
+
+
+.navigation-item:first-child {
+    margin-left: 0;
+}
+
+.navigation-item:first-child .item-stick:before {
+    display: none;
+}
+
+.item-stick:before {
+    height: 1rem;
+    content: "";
+    position: absolute;
+    width: 1px;
+    margin: -0.5rem 0 0 0;
+    background-color: #d6d6d6;
+    top: 50%;
+    pointer-events: none;
+}
+
+.link {
+    transition: .4s ease-out;
+    color: #fff;
+}
+
+.link:hover {
+    color: #3FB75E;
+    text-decoration: none;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 2.65rem;
+    background: #DEE2E0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    transition: 1s linear;
+}
+
+.submenu-item > .link {
+    display: block;
+    padding: 1rem;
+    color: #2D476B;
+    text-decoration: none;
+}
+
+.submenu-item > .link:hover {
+    text-decoration: none;
+    color: #3FB75E;
+}
+
+.navigation-item:hover > .submenu {
+    display: flex;
+    flex-wrap: wrap;
+    transition: 1s linear;
+}
+
+.submenu-item {
+    margin: 0;
+    list-style: none;
+    padding: .5rem;
+    width: 33.3%;
+}
+
+.burger-menu {
+    display: none;
+    text-align: center;
+}
+
+.burger-dropdown {
+    display: none;
+    position: fixed;
+    background: #DEE2E0;
+    top: 4.1rem;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    height: 100%;
+}
+
+.burger-item {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #bbb;
+    position: relative;
+    padding-top: 1.2rem;
+    cursor: pointer;
+}
+
+.burger-item .link {
+    color: #2D476B;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.burger-item .link:hover {
+    color: #3FB75E;
+}
+
+.burger-submenu {
+    display: none;
+    padding: .5rem 0;
+}
+
+.burger-submenu-items {
+    padding: .3rem 0;
+}
+
+.burger-submenu-items .link {
+    font-size: .9rem;
+    font-weight: 500;
+}
+
+.burger-item.item-collapsed:after {
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-top: .63rem solid #2D476B;
+}
+
+.burger-item.item-expanded:after {
+    border: 0;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: .455rem solid transparent;
+    border-right: .455rem solid transparent;
+    border-bottom: .63rem solid #2D476B;
+}
+
+.burger-navigation {
+    padding: 2.6rem 2.6rem 0;
+    margin-bottom: 5.2rem;
+    overflow-y: auto;
+}
+
+.burger-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.authentication {
+    border-bottom: 1px solid #737373;
+    cursor: pointer;
+    float: left;
+    transition: .4s ease-out;
+}
+
+.authentication:hover {
+    color: #3FB75E;
+}
+
+.user-account {
+    display: none;
+    border-bottom: 1px solid #737373;
+    cursor: pointer;
+    float: left;
+    transition: .4s ease-out;
+}
+
+.user-account:hover {
+    color: #3FB75E;
+}
+
+.user-submenu {
+    display: none;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    text-align: center;
+    top: 2.65rem;
+    width: 100%;
+    background: #DEE2E0;
+}
+
+.user-submenu-item {
+    cursor: pointer;
+}
+
+.user-submenu-item:first-child {
+    border-bottom: 1px solid #2D476B;
+}
+
+.user-submenu .link {
+    color: #2D476B;
+    font-weight: 700;
+    display: block;
+    font-size: .9rem;
+    padding: 1.5rem;
+}
+
+.user-submenu .link:hover{
+    color: #3FB75E;
+}
+
+.popup-wrapper {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    color: #000;
+}
+
+.popup {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 30%;
+    z-index: 1;
+    min-width: 22rem;
+}
+
+.popup-header{
+    background: #2D476B;
+    width: 100%;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.popup-content {
+    padding: 1rem;
+}
+
+.popup-title {
+    color: #000000;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.sign-in-form {
+    text-align: center;
+}
+
+.sign-in-label {
+    font-weight: 600;
+}
+
+.sign-in-input {
+    width: 80%;
+    height: 3rem;
+    margin-bottom: 1rem;
+    padding-left: .8rem;
+    font-size: 1rem;
+    padding-bottom: .1rem;
+    outline: none;
+}
+
+.sign-in-button {
+    width: 80%;
+    height: 3rem;
+    background: #E83E8C;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+    transition: background-color .5s ease .01ms;
+    outline: none;
+}
+
+.sign-up {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.sign-up-button {
+    color: #3FB75E;
+    font-weight: 600;
+}
+
+.sign-up-button:hover {
+    text-decoration: none;
+    color: #2D476B;
+}
+
+.popup-close {
+    position: absolute;
+    float: right;
+    right: 1rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    opacity: .8;
+}
+.popup-close:hover {
+    opacity: 1;
+}
+.popup-close:before, .popup-close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 1.5rem;
+    width: 2px;
+    background-color: #fff;
+}
+.popup-close:before {
+    transform: rotate(45deg);
+}
+.popup-close:after {
+    transform: rotate(-45deg);
+}
+
+.sign-in-button:hover {
+    background: #D82E7C;
+}
+
+.disable {
+    display: none;
+}
+
+.active {
+    display: block;
+}

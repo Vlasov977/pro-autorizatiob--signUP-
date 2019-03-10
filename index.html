@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script data-main="app" src="js/lib/require.js"></script>
+</head>
+<body>
+<div id="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <a href="/">Home</a>
+                </div>
+                <div class="col-md-2 offset-md-1 col-4">
+                    <div class="authentication-block">
+                        <span class="authentication">Sign in</span>
+                        <span class="user-account"></span>
+                        <ul class="user-submenu">
+                            <li class="user-submenu-item"><a href="/user" class="link sub-account">Profile</a></li>
+                            <li class="user-submenu-item"><a href="#" class="link sub-account sign-out">Sign out</a></li>
+                        </ul>
+                    </div>
+                    <div class="popup-wrapper" id="signUpModal">
+                        <div class="popup">
+                            <span class="popup-close"></span>
+                            <div class="popup-header">
+                                <img src="img/logo.png" alt="">
+                            </div>
+                            <div class="popup-content">
+                                <div class="popup-title">
+                                    <p>Great to have you back!</p>
+                                </div>
+                                <form class="sign-in-form">
+                                    <label for="login" class="sign-in-label">Login</label>
+                                    <div class="input">
+                                        <input type="text" id="login" name="name" class="sign-in-input" autocomplete="off" placeholder="Enter your login">
+                                    </div>
+                                    <label for="password" class="sign-in-label">Password</label>
+                                    <div class="input">
+                                        <input type="password" id="password" name="password" class="sign-in-input" autocomplete="off" placeholder="Enter your password">
+                                    </div>
+                                    <input type="submit" class="sign-in-button" value="Sign in">
+                                </form>
+                                <div class="sign-up">
+                                    <p class="sign-up-text">New here? <a href="/create-account" class="sign-up-button">Create account</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="page"></div>
+</div>
+</body>
+</html>
